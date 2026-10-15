@@ -12,6 +12,6 @@ type Opening struct {
 	Role        string `json:"role"`
 	Location    string `json:"location"`
 	IsRemote    bool   `json:"remote"`
-	Link 	  	string `json:"link"`
-	Salary	  	string `json:"salary"`
+	Link        string `json:"link"`
+	Salary      string `json:"salary"`
 }
