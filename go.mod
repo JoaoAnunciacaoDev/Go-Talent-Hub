@@ -1,9 +1,10 @@
 module github.com/JoaoAnunciacaoDev/Go-Talent-Hub
 
-go 1.25.1
+go 1.27
 
 require (
 	github.com/gin-gonic/gin v1.12.0
+	github.com/google/uuid v1.6.0
 	gorm.io/driver/sqlite v1.6.0
 	gorm.io/gorm v1.31.2
 )
