@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/handler"
+	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/internal/handler"
 	"github.com/gin-gonic/gin"
 )
 

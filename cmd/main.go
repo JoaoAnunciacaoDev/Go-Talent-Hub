@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/config"
-	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/router"
+	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/internal/config"
+	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/internal/router"
 )
 
 var (

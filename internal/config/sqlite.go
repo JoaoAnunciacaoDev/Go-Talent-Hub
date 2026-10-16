@@ -3,7 +3,7 @@ package config
 import (
 	"os"
 
-	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/schemas"
+	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/internal/schemas"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )

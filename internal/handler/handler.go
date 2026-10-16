@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/config"
+	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/internal/config"
 	"gorm.io/gorm"
 )
 
