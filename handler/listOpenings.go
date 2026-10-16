@@ -1,13 +1,24 @@
 package handler
 
 import (
+	"fmt"
 	"net/http"
 
+	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/schemas"
 	"github.com/gin-gonic/gin"
 )
 
 func ListOpeningsHandler(context *gin.Context) {
-	context.JSON(http.StatusOK, gin.H{
-		"message": "GET openings",
-	})
+	openings := []schemas.Opening{}
+
+	if err := db.Find(&openings).Error; err != nil {
+		sendError(
+			context, 
+			http.StatusInternalServerError, 
+			(fmt.Sprintf("error listing openings: %v", err.Error())),
+		)
+		return
+	}
+
+	sendSuccess(context, "listOpenings", openings)
 }

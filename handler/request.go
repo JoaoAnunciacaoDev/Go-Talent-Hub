@@ -23,6 +23,20 @@ type CreateOpeningRequest struct {
 	Salary      int64     `json:"salary"`
 }
 
+type UpdateOpeningRequest struct {
+	ID          uuid.UUID `json:"id"`
+	Title       string    `json:"title"`
+	Description string    `json:"description"`
+	Company     string    `json:"company"`
+	Role        string    `json:"role"`
+	Location    string    `json:"location"`
+	IsRemote    *bool     `json:"remote"`
+	IsActive    *bool     `json:"isActive"`
+	IsSecret    *bool     `json:"isSecret"`
+	Link        string    `json:"link"`
+	Salary      int64     `json:"salary"`
+}
+
 func (r *CreateOpeningRequest) Validate() error {
 	if r.Title == "" {
 		return errParamIsRequired("title", "string")
@@ -65,4 +79,12 @@ func (r *CreateOpeningRequest) Validate() error {
 	}
 
 	return nil
+}
+
+func (r *UpdateOpeningRequest) Validate() error {
+	if r.Title == "" || r.Description == "" || r.Company == "" || r.Role == "" || r.Location == "" || r.Link == "" || r.IsRemote == nil || r.IsActive == nil || r.IsSecret == nil || r.Salary > 0 {
+		return nil
+	}
+
+	return fmt.Errorf("at least one field must be provided for update")
 }
