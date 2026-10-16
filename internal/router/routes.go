@@ -1,12 +1,16 @@
 package router
 
 import (
+	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/cmd/docs"
 	"github.com/JoaoAnunciacaoDev/Go-Talent-Hub/internal/handler"
 	"github.com/gin-gonic/gin"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func initializeRoutes(router *gin.Engine) {
 	handler.InitializeHandler()
+	basePath := "/api/v1"
+	docs.SwaggerInfo.BasePath = basePath
 
 	v1 := router.Group("/api/v1")
 	{
@@ -18,4 +22,6 @@ func initializeRoutes(router *gin.Engine) {
 		v1.DELETE("/opening", func(context *gin.Context) { handler.DeleteOpeningHandler(context) })
 
 	}
+
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 }
